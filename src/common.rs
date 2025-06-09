@@ -33,7 +33,7 @@ pub enum Type {
     Graysexual,
 }
 
-#[derive(EnumString, EnumIter, AsRefStr, Display, Debug, Clone, Copy, Default)]
+#[derive(EnumString, EnumIter, AsRefStr, Display, Debug, Clone, Copy, Default, PartialEq)]
 pub enum Direction {
     #[default]
     Horizontal,
