@@ -1,6 +1,6 @@
 [package]
 name = "pride-rs"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 rust-version = "1.85"
 description = "🏳️‍🌈 A highly customizable pride flags for WASM frameworks like Yew, Dioxus, and Leptos."
