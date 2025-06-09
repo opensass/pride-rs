@@ -3409,7 +3409,7 @@ dependencies = [
 
 [[package]]
 name = "pride-rs"
-version = "0.0.0"
+version = "0.0.1"
 dependencies = [
  "bump2version",
  "dioxus",
