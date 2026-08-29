@@ -1,3 +1,7 @@
+// MIT License
+//
+// Copyright (c) 2026 Open SASS Core Maintainers
+
 #![doc(
     html_logo_url = "https://raw.githubusercontent.com/opensass/pride-rs/refs/heads/main/assets/logo.webp",
     html_favicon_url = "https://github.com/opensass/pride-rs/blob/main/assets/favicon.png"

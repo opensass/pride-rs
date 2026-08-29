@@ -27,15 +27,33 @@
 
 ## 📜 Intro
 
-**Pride RS** is a highly customizable pride flags components for WASM Frameworks like **Yew**, **Leptos**, and **Dioxus**. It helps you build beautiful, responsive pride flags with minimal setup and maximum customization.
+**Pride RS** is a highly customizable pride flags component library for WASM frameworks like **Yew**, **Leptos**, and **Dioxus**. It helps you build beautiful, responsive pride flags with minimal setup and maximum customization.
 
 ## 🤔 Why Use Pride RS?
 
 1. **📱 Responsive by Default**: Automatically adapts to different screen sizes with clean mobile-first layout support.
 
-1. **🎨 Easy to Customize**: Configure layou and more using straightforward props.
+1. **🎨 Easy to Customize**: Configure layout and more using straightforward props.
 
-1. **🌈 Theming & Styling Freedom**: Comes unopinionated; Style it using Tailwind CSS, regular classes, or inline styles.
+1. **🌈 Theming & Styling Freedom**: Comes unopinionated; style it using Tailwind CSS, regular classes, or inline styles.
+
+1. **🔒 Compile-Time Feature Gates**: Use the `haram` feature to opt-in to gender-identity-related flag types, excluded by default for zero-overhead compliance.
+
+### Default (Halal) Edition
+
+```toml
+pride-rs = { version = "0.1.0", features = ["yew"] }
+```
+
+Includes: Rainbow, Bisexual, Lesbian, Pansexual, Asexual, Aromantic, Demisexual, Polysexual, Omnisexual, Demiromantic, Graysexual.
+
+### Full Edition (with `haram`)
+
+```toml
+pride-rs = { version = "0.1.0", features = ["yew", "haram"] }
+```
+
+Adds: Transgender, NonBinary, Genderfluid, Agender.
 
 ## Yew Usage
 
