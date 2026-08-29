@@ -101,7 +101,7 @@ pub enum Type {
     /// Requires the `haram` Cargo feature to be enabled:
     ///
     /// ```toml
-    /// pride-rs = { version = "0.0.2", features = ["haram"] }
+    /// pride-rs = { version = "0.1.0", features = ["haram"] }
     /// ```
     #[cfg(feature = "haram")]
     Transgender,
@@ -113,7 +113,7 @@ pub enum Type {
     /// Requires the `haram` Cargo feature to be enabled:
     ///
     /// ```toml
-    /// pride-rs = { version = "0.0.2", features = ["haram"] }
+    /// pride-rs = { version = "0.1.0", features = ["haram"] }
     /// ```
     #[cfg(feature = "haram")]
     NonBinary,
@@ -125,7 +125,7 @@ pub enum Type {
     /// Requires the `haram` Cargo feature to be enabled:
     ///
     /// ```toml
-    /// pride-rs = { version = "0.0.2", features = ["haram"] }
+    /// pride-rs = { version = "0.1.0", features = ["haram"] }
     /// ```
     #[cfg(feature = "haram")]
     Genderfluid,
@@ -137,7 +137,7 @@ pub enum Type {
     /// Requires the `haram` Cargo feature to be enabled:
     ///
     /// ```toml
-    /// pride-rs = { version = "0.0.2", features = ["haram"] }
+    /// pride-rs = { version = "0.1.0", features = ["haram"] }
     /// ```
     #[cfg(feature = "haram")]
     Agender,
