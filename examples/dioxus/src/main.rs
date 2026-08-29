@@ -1,11 +1,15 @@
+// MIT License
+//
+// Copyright (c) 2026 Open SASS Core Maintainers
+
 use dioxus::prelude::*;
 use dioxus_logger::tracing;
-use pride_rs::dioxus::{Flag, FlagSection};
-use pride_rs::{Size, Type};
+use pride_rs::Size;
+use pride_rs::Type;
+use pride_rs::dioxus::Flag;
+use pride_rs::dioxus::FlagSection;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
-// const HEADER_SVG: Asset = asset!("/assets/header.svg");
-// const MAIN_CSS: Asset = asset!("/assets/styles.css");
 const TAILWIND_CSS: Asset = asset!("/assets/output.css");
 
 fn main() {
@@ -86,10 +90,10 @@ fn App() -> Element {{
                         r#type: Type::Rainbow
                     }
                     Flag {
-                        r#type: Type::Transgender
+                        r#type: Type::Bisexual
                     }
                     Flag {
-                        r#type: Type::Bisexual
+                        r#type: Type::Lesbian
                     }
                     pre {
                         class: "w-full text-xs bg-gray-800 text-gray-100 p-4 rounded mb-4 overflow-x-auto",
@@ -104,10 +108,10 @@ fn App() -> Element {{
             r#type: Type::Rainbow
         }}
         Flag {{
-            r#type: Type::Transgender
+            r#type: Type::Bisexual
         }}
         Flag {{
-            r#type: Type::Bisexual
+            r#type: Type::Lesbian
         }}
     }}
 }}"##
@@ -125,16 +129,12 @@ fn App() -> Element {{
                         title: "Pride Flags",
                         flags: vec![
                                 Type::Rainbow,
-                                Type::Transgender,
                                 Type::Bisexual,
                                 Type::Lesbian,
                                 Type::Pansexual,
                                 Type::Asexual,
-                                Type::NonBinary,
                                 Type::Aromantic,
                                 Type::Demisexual,
-                                Type::Genderfluid,
-                                Type::Agender,
                                 Type::Polysexual,
                                 Type::Omnisexual,
                                 Type::Demiromantic,
@@ -154,22 +154,11 @@ fn App() -> Element {{
             id: "flags",
             title: "Pride Flags",
             flags: vec![
-                    Type::Rainbow,
-                    Type::Transgender,
-                    Type::Bisexual,
-                    Type::Lesbian,
-                    Type::Pansexual,
-                    Type::Asexual,
-                    Type::NonBinary,
-                    Type::Aromantic,
-                    Type::Demisexual,
-                    Type::Genderfluid,
-                    Type::Agender,
-                    Type::Polysexual,
-                    Type::Omnisexual,
-                    Type::Demiromantic,
-                    Type::Graysexual,
-                ]
+                Type::Rainbow,
+                Type::Bisexual,
+                Type::Lesbian,
+                // Add Type::Transgender with --features haram
+            ]
         }}
     }}
 }}"##

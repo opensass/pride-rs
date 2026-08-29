@@ -1,5 +1,11 @@
-use pride_rs::yew::{FlagSection, Flag};
-use pride_rs::{Size, Type};
+// MIT License
+//
+// Copyright (c) 2026 Open SASS Core Maintainers
+
+use pride_rs::yew::Flag;
+use pride_rs::yew::FlagSection;
+use pride_rs::Size;
+use pride_rs::Type;
 use yew::prelude::*;
 
 #[function_component(LandingPage)]
@@ -36,8 +42,8 @@ pub fn app() -> Html {
                 <div class="flex flex-col items-center bg-gray-50 p-6 rounded-lg shadow-lg">
                     <h2 class="text-xl font-semibold mb-4 text-gray-800">{ "Flag Types" }</h2>
                     <Flag r#type={Type::Rainbow} />
-                    <Flag r#type={Type::Transgender} />
                     <Flag r#type={Type::Bisexual} />
+                    <Flag r#type={Type::Lesbian} />
                     <pre
                         class="font-mono text-xs text-gray-200 bg-gray-800 p-4 rounded-md w-full mb-4 overflow-x-auto"
                     >
@@ -51,8 +57,8 @@ pub fn app() -> Html {
     html! {
         <>
             <Flag r#type={Type::Rainbow} />
-            <Flag r#type={Type::Transgender} />
             <Flag r#type={Type::Bisexual} />
+            <Flag r#type={Type::Lesbian} />
         </>
     }
 }"# }
@@ -65,16 +71,12 @@ pub fn app() -> Html {
                         title="Pride Flags"
                         flags={vec![
                                 Type::Rainbow,
-                                Type::Transgender,
                                 Type::Bisexual,
                                 Type::Lesbian,
                                 Type::Pansexual,
                                 Type::Asexual,
-                                Type::NonBinary,
                                 Type::Aromantic,
                                 Type::Demisexual,
-                                Type::Genderfluid,
-                                Type::Agender,
                                 Type::Polysexual,
                                 Type::Omnisexual,
                                 Type::Demiromantic,
@@ -97,20 +99,9 @@ pub fn app() -> Html {
             title="Pride Flags"
             flags={vec![
                 Type::Rainbow,
-                Type::Transgender,
                 Type::Bisexual,
                 Type::Lesbian,
-                Type::Pansexual,
-                Type::Asexual,
-                Type::NonBinary,
-                Type::Aromantic,
-                Type::Demisexual,
-                Type::Genderfluid,
-                Type::Agender,
-                Type::Polysexual,
-                Type::Omnisexual,
-                Type::Demiromantic,
-                Type::Graysexual,
+                // Add Type::Transgender etc. with --features haram
             ]}
         />
     }

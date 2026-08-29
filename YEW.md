@@ -7,10 +7,56 @@ Adding Pride RS to your project is simple:
 1. Add the Pride RS component to your dependencies by including it in your `Cargo.toml` file:
 
    ```sh
+   # Halal edition (default)
    cargo add pride-rs --features=yew
+
+   # Full edition (includes gender-identity flags)
+   cargo add pride-rs --features=yew,haram
    ```
 
 1. Import a `Flag` component into your Yew component and start using it in your app.
+
+## 🚩 Feature Gate: `haram`
+
+By default, four flag types are **excluded** from the crate at compile time because they relate to gender identity change:
+
+| Type | Excluded by default |
+|---|---|
+| `Transgender` | ✅ |
+| `NonBinary` | ✅ |
+| `Genderfluid` | ✅ |
+| `Agender` | ✅ |
+
+Enable the `haram` feature to opt-in:
+
+```toml
+pride-rs = { version = "0.1.0", features = ["yew", "haram"] }
+```
+
+You can also inspect the gate at runtime via `FlagConfig::haram`:
+
+```rust
+use pride_rs::Type;
+use pride_rs::FlagLookup;
+
+let config = Type::Rainbow.config().unwrap();
+assert!(!config.haram);
+
+// Only available when --features haram is set:
+// let config = Type::Transgender.config().unwrap();
+// assert!(config.haram);
+```
+
+And detect haram variants directly on the enum (requires `haram` feature):
+
+```rust
+#[cfg(feature = "haram")]
+{
+    use pride_rs::Type;
+    assert!(Type::Transgender.is_haram());
+    assert!(!Type::Rainbow.is_haram());
+}
+```
 
 ## 🛠️ Usage
 
@@ -61,7 +107,7 @@ pub fn app() -> Html {
             <Flag size={Size::Large} />
             <FlagSection
                 title={"Pride Flags".to_string()}
-                flags={vec![Type::Rainbow, Type::Transgender, Type::NonBinary]}
+                flags={vec![Type::Rainbow, Type::Bisexual, Type::Lesbian]}
                 id="pride"
             />
         </>
@@ -79,7 +125,7 @@ The `Flag` component renders a single flag based on the provided `Type`, with op
 
 | Prop               | Type           | Description                                           | Default                                                    |
 | ------------------ | -------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
-| `type`             | `Type`         | Type of the flag. Determines colors and layout.       | `Type::Rainbow                                             |
+| `type`             | `Type`         | Type of the flag. Determines colors and layout.       | `Type::Rainbow`                                            |
 | `size`             | `Size`         | The size of the flag (`Small`, `Medium`, or `Large`). | `Size::Medium`                                             |
 | `class`            | `&'static str` | Additional CSS classes for the flag container.        | `""`                                                       |
 | `aria_label`       | `String`       | Accessible label for screen readers.                  | `String::new()`                                            |
@@ -130,3 +176,4 @@ The `FlagSection` component displays a titled section of multiple flags. It can 
 - Flags have `aria-roledescription="flag"` for better assistive context.
 - `FlagSection` uses `role="group"` with `aria-labelledby` and `aria-describedby`.
 - Empty state has polite `aria-live` announcements.
+- Gender-identity flag types are excluded by default; enable `--features haram` to include them.
